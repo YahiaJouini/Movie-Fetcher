@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content%}
+    <form action="/search" method="POST">
+        <tr><center><td><h1>Search for a Movie,Tv Show</h1></td></center></tr>
+        <br>
+        <tr><td><input type="text" class="form-control" name="title"></td></tr>
+    <br>
+    <center><input type="submit" class="btn btn-dark btn-lg" value="SEARCH"></center>
+</form>
+{% endblock %}

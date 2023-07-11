@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
+        *{
+            color: #363636;}
+        html,body {
+            height: 100%;
+        }
+        .container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;}
+        input[type='text']{
+            height: 40px;
+            width: 800px;
+            text-align: center;}
+        h1{
+            text-align: center;}
+        .poster{
+            height: 130px;
+            width: 106px;
+            transition: 0.25s;}
+        .poster:hover{
+            transform: scale(1.06);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(39, 39, 39, 0.4);}
+        table{
+            box-shadow: 2px 2px 12px rgba(20, 20, 20, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    {% block content%}
+    {% endblock %}
+</div>
+</body>
+</html>

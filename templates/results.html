@@ -1,0 +1,36 @@
+{% extends 'layout.html'%}
+{% block content %}
+{%if data:%}
+<table class="table table-bordered ">
+    <thead class="thead-dark">
+        <tr align="center">
+          <th scope="col">POSTER</th>
+          <th scope="col">TYPE</th>
+          <th scope="col"> TITLE</th>
+          <th scope="col"> GENRE</th>
+          <th scope="col"> IMDb RATING</th>
+        </tr>
+      </thead>
+      <tbody>
+{% for d in data:%}
+{% if "status" not in d: %}
+<tr align="center">
+    <td><a href="{{d['url'][20:]}}"><img src="{{d['poster']}}" class="poster"></a>
+    </td><td>{{d['type']}}</td>
+    <td>{{d['name']}}</td>
+    <td>
+        {% for genre in (d["genre"]):%}
+        {{genre}}
+        <br>
+        {% endfor %}
+    </td>
+    <td>{{d['rating']['ratingValue']}}</td>
+</tr>
+{% endif%}
+{%endfor%}
+</tbody>
+</table>
+{%else%}
+<h1>What you're looking for doesn't exist</h1>
+{%endif%}
+{% endblock %}
